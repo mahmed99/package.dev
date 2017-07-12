@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        Mahmed99\Sslcommerzpayment\SslcommerzServiceProvider::class,
 
         /*
          * Application Service Providers...
