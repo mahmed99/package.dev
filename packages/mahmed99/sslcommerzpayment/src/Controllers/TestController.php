@@ -2,7 +2,6 @@
 
 namespace Mahmed99\Sslcommerzpayment\Controllers;
 
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

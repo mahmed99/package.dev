@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Order;
-use App\User;
-use App\SslcommerzPayment;
-use App\Repositories\Payment\PaymentRepository;
+use Mahmed99\Sslcommerzpayment\Repositories\PaymentRepository;
 
 class PaymentController extends Controller
 {
@@ -45,8 +43,8 @@ class PaymentController extends Controller
 
         
         
-        $sandbox = config('payment.sslcommerz.sandbox');
-        $gwUrl = ($sandbox) ? config('payment.sslcommerz.sandbox_url') : config('payment.sslcommerz.live_url');             
+        $sandbox = config('sslcommerzpayment.sslcommerz.sandbox');
+        $gwUrl = ($sandbox) ? config('sslcommerzpayment.sslcommerz.sandbox_url') : config('sslcommerzpayment.sslcommerz.live_url');             
 
         return view('sslcommerzpayment.payment', compact(
                         'gwUrl', 

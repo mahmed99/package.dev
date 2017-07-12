@@ -4,7 +4,7 @@ namespace Mahmed99\Sslcommerzpayment\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\Payment\PaymentRepositoryInterface;
+use Mahmed99\Sslcommerzpayment\Repositories\PaymentRepositoryInterface;
 
 class PaymentFailedController extends Controller
 {
