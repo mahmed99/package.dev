@@ -1,10 +1,10 @@
 <?php
 
-namespace Mahmed99\Sslcommerzpayment\Controllers;
+namespace Mahmed99\Sslcommerzpayment\controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\Payment\PaymentRepositoryInterface;
+use Mahmed99\Sslcommerzpayment\Repositories\PaymentRepositoryInterface;
 
 class PaymentSuccessController extends Controller
 {

@@ -2,6 +2,7 @@
 
 //Route::get('/test', 'Naoray\Test\Http\Controllers\TestController@index');
 
+Route::get('/test', 'Mahmed99\Sslcommerzpayment\Controllers\TestController@index');
 
 Route::get('/pay/{booking}', 'Mahmed99\Sslcommerzpayment\Controllers\PaymentController@payNow');
 
