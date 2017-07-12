@@ -1,0 +1,12 @@
+{
+    "name": "mahmed99/sslcommerzpayment",
+    "description": "Integration for sslcommerz gateway.",    
+    "authors": [
+        {
+            "name": "m ahmed",
+            "email": "mahmed99.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
