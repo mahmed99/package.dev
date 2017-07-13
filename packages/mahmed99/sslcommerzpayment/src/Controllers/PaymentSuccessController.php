@@ -1,6 +1,6 @@
 <?php
 
-namespace Mahmed99\Sslcommerzpayment\controllers;
+namespace Mahmed99\Sslcommerzpayment\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,6 +21,6 @@ class PaymentSuccessController extends Controller
 
     	extract($paymentInfo);
 
-    	return view('payment.success', compact('payment_status', 'validation_message', 'status', 'tran_id', 'val_id', 'store_amount', 'amount'));	
+    	return view('sslcommerzpayment::success', compact('payment_status', 'validation_message', 'status', 'tran_id', 'val_id', 'store_amount', 'amount'));	
     }
 }

@@ -19,8 +19,8 @@ class PaymentFailedController extends Controller
     {
     	$paymentInfo = $this->payment->action($request);
 
-    	extract($paymentInfo); // $payment_status, $validation_message, $bookingId
+    	extract($paymentInfo); // $payment_status, $validation_message, $orderId
 
-    	return view('payment.failed', compact('validation_message', 'bookingId'));	
+    	return view('sslcommerzpayment::failed', compact('validation_message', 'orderId', 'payment_status'));	
     }
 }

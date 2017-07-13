@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Order;
+use App\User;
 use Mahmed99\Sslcommerzpayment\Repositories\PaymentRepository;
 
 class PaymentController extends Controller
@@ -19,7 +20,8 @@ class PaymentController extends Controller
     
     public function payNow(Order $order, Request $request)
     {
-    	
+    	       
+        //dd($order);
         $orderId = $order->id;                
         $amount = $order->amount;        
         
@@ -27,33 +29,28 @@ class PaymentController extends Controller
         $totalAmount = $amount + $onlineCharge;
         
 
-        $user = $request->user();          
+        //$user = $request->user();          
         //$name = $user->name;
         //$email = $user->email;
-
+        $user = User::find(1);          
+        
         $order = [
-            'order_id' => $orderId,
-            'schedule_id' => $order->schedule_id,
-            'travel_date' => date("d-m-Y", strtotime($order->date)),
+            'order_id' => $orderId,                        
             'total_amount' => $totalAmount
         ];
-
-        //$this->payment->setSessionFororderInfo($order, $this->request); 
-        $this->payment->setSessionForOrderInfo($order, $request); 
-
         
+        $this->payment->setSessionForOrderedInfo($order, $request);         
         
         $sandbox = config('sslcommerzpayment.sslcommerz.sandbox');
         $gwUrl = ($sandbox) ? config('sslcommerzpayment.sslcommerz.sandbox_url') : config('sslcommerzpayment.sslcommerz.live_url');             
 
-        return view('sslcommerzpayment.payment', compact(
+        return view('sslcommerzpayment::payment', compact(
                         'gwUrl', 
                         'orderId', 
                         'amount',
                         'onlineCharge',
                         'totalAmount', 
-                        'user'
-                        
+                        'user'                        
                 ));
     }
 
