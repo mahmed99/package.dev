@@ -1,12 +1,16 @@
 {
     "name": "mahmed99/sslcommerzpayment",
-    "description": "Sslcommerz gateway integration",    
+    "description": "Sslcommerz payment gateway integration",    
     "authors": [
         {
             "name": "m ahmed",
             "email": "mahmed99.dev@gmail.com"
         }
-    ],
-    "minimum-stability": "dev",
-    "require": {}
+    ],    
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Mahmed99\\Sslcommerzpayment\\": "src/"           
+        }
+    },
 }

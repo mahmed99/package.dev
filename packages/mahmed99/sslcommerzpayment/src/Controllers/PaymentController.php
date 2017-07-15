@@ -42,7 +42,9 @@ class PaymentController extends Controller
         $this->payment->setSessionForOrderedInfo($order, $request);         
         
         $sandbox = config('sslcommerzpayment.sslcommerz.sandbox');
-        $gwUrl = ($sandbox) ? config('sslcommerzpayment.sslcommerz.sandbox_url') : config('sslcommerzpayment.sslcommerz.live_url');             
+        $gwUrl = ($sandbox) ? config('sslcommerzpayment.sslcommerz.sandbox_url') : config('sslcommerzpayment.sslcommerz.live_url');   
+
+        $storeId = config('sslcommerzpayment.sslcommerz.store_id');          
 
         return view('sslcommerzpayment::payment', compact(
                         'gwUrl', 
@@ -50,7 +52,8 @@ class PaymentController extends Controller
                         'amount',
                         'onlineCharge',
                         'totalAmount', 
-                        'user'                        
+                        'user',
+                        'storeId'
                 ));
     }
 

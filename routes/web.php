@@ -11,6 +11,11 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test1', function() {
+	return Sslcommerz::paymentData(1);
 });

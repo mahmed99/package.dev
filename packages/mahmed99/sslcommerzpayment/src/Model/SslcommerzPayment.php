@@ -1,6 +1,6 @@
 <?php
 
-namespace Mahmed99\Sslcommerzpayment;
+namespace Mahmed99\Sslcommerzpayment\Model;
 
 use Illuminate\Database\Eloquent\Model;
 

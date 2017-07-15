@@ -1,6 +1,7 @@
 <?php
  
-namespace App\Repositories\Payment;
+namespace Mahmed99\Sslcommerzpayment\Repositories;
+
 use Illuminate\Http\Request;
  
 interface PaymentRepositoryInterface

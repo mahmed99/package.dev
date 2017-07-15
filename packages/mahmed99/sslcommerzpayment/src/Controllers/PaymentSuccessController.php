@@ -2,8 +2,10 @@
 
 namespace Mahmed99\Sslcommerzpayment\Controllers;
 
+use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Mahmed99\Sslcommerzpayment\Events\PaymentSuccess;
 use Mahmed99\Sslcommerzpayment\Repositories\PaymentRepositoryInterface;
 
 class PaymentSuccessController extends Controller
@@ -21,6 +23,10 @@ class PaymentSuccessController extends Controller
 
     	extract($paymentInfo);
 
-    	return view('sslcommerzpayment::success', compact('payment_status', 'validation_message', 'status', 'tran_id', 'val_id', 'store_amount', 'amount'));	
+        $order = Order::findOrFail($orderId);
+
+        event(new PaymentSuccess($order));
+
+    	return view('sslcommerzpayment::success', compact('payment_status', 'validation_message', 'status', 'tran_id', 'bank_tran_id', 'tran_date', 'store_amount', 'amount', 'card_type', 'currency'));	
     }
 }

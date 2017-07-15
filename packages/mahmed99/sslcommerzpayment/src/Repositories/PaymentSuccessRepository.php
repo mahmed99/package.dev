@@ -2,8 +2,8 @@
 
 namespace Mahmed99\Sslcommerzpayment\Repositories;
 
-use App\SslcommerzPayment;
 use Illuminate\Http\Request;
+use Mahmed99\Sslcommerzpayment\Model\SslcommerzPayment;
 //use App\Repositories\Payment\PaymentRepository;
 
 
@@ -155,7 +155,8 @@ class PaymentSuccessRepository implements PaymentRepositoryInterface
         	'tran_id' => $tran_id, 
         	'val_id' => $val_id, 
         	'store_amount' => $store_amount, 
-        	'amount' => $amount
+        	'amount' => $amount,
+            'orderId' => $orderId,
         ];
         
     }

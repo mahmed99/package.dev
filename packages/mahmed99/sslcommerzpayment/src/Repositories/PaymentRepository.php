@@ -5,7 +5,7 @@ namespace Mahmed99\Sslcommerzpayment\Repositories;
 use Illuminate\Http\Request;
 
 //use App\User;
-use App\Order;
+//use App\Order;
 
 
 class PaymentRepository
@@ -45,7 +45,7 @@ class PaymentRepository
 
     public function getOnlineCharge()
     {
-    	return ($this->onlineCharge/100);
+        return $this->onlineCharge;
     }
     
 }

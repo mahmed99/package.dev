@@ -20,7 +20,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Mahmed99\\Sslcommerzpayment\\": "packages/mahmed99/sslcommerzpayment/src"
+            "Mahmed99\\Sslcommerzpayment\\": "packages/mahmed99/sslcommerzpayment/src"           
         }
     },
     "autoload-dev": {

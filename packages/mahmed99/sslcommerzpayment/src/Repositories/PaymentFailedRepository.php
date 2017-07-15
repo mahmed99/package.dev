@@ -1,9 +1,9 @@
 <?php 
 
-namespace App\Repositories\Payment;
+namespace Mahmed99\Sslcommerzpayment\Repositories;
 
-use App\SslcommerzPayment;
 use Illuminate\Http\Request;
+use Mahmed99\Sslcommerzpayment\Model\SslcommerzPayment;
 //use App\Repositories\Payment\PaymentRepository;
 
 

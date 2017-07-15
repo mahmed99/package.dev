@@ -2,8 +2,8 @@
 
 namespace Mahmed99\Sslcommerzpayment\Repositories;
 
-use App\SslcommerzPayment;
 use Illuminate\Http\Request;
+use Mahmed99\Sslcommerzpayment\Model\SslcommerzPayment;
 
 class PaymentCancelledRepository implements PaymentRepositoryInterface
 {
