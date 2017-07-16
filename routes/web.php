@@ -16,6 +16,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test1', function() {
-	return Sslcommerz::paymentData(1);
+Route::get('/paymentdata/{order}', function($order) {
+	$data = Sslcommerz::paymentData($order);
+	return ($data->count() > 0) ? $data : 'Found Nothing';
 });
+
+Route::get('/validationdata/{order}', function($order) {
+	$data = Sslcommerz::validationData($order);
+	return ($data->count() > 0) ? $data : 'Found Nothing';
+});
+
+// Route::get('/paymentdata/{order}', 'PaymentInfoController@paymentData');
+// Route::get('/validationdata/{order}', 'PaymentInfoController@validationData');

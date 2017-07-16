@@ -32,29 +32,36 @@ class PaymentController extends Controller
         //$user = $request->user();          
         //$name = $user->name;
         //$email = $user->email;
-        $user = User::find(1);          
-        
-        $order = [
-            'order_id' => $orderId,                        
-            'total_amount' => $totalAmount
-        ];
-        
-        $this->payment->setSessionForOrderedInfo($order, $request);         
-        
-        $sandbox = config('sslcommerzpayment.sslcommerz.sandbox');
-        $gwUrl = ($sandbox) ? config('sslcommerzpayment.sslcommerz.sandbox_url') : config('sslcommerzpayment.sslcommerz.live_url');   
+        $user = User::find(1); 
+        //dd($user);
 
-        $storeId = config('sslcommerzpayment.sslcommerz.store_id');          
+        if ($user !== null) {
 
-        return view('sslcommerzpayment::payment', compact(
-                        'gwUrl', 
-                        'orderId', 
-                        'amount',
-                        'onlineCharge',
-                        'totalAmount', 
-                        'user',
-                        'storeId'
-                ));
+            $order = [
+                'order_id' => $orderId,                        
+                'total_amount' => $totalAmount
+            ];
+            
+            $this->payment->setSessionForOrderedInfo($order, $request);         
+            
+            $sandbox = config('sslcommerzpayment.sslcommerz.sandbox');
+            $gwUrl = ($sandbox) ? config('sslcommerzpayment.sslcommerz.sandbox_url') : config('sslcommerzpayment.sslcommerz.live_url');   
+
+            $storeId = config('sslcommerzpayment.sslcommerz.store_id');          
+
+            return view('sslcommerzpayment::payment', compact(
+                            'gwUrl', 
+                            'orderId', 
+                            'amount',
+                            'onlineCharge',
+                            'totalAmount', 
+                            'user',
+                            'storeId'
+                    ));
+        }
+        $errorMsg = 'Guest is not allowed to do this. Login or Signup Please!';
+        return view ('sslcommerzpayment::error', compact('errorMsg'));        
+        
     }
 
 }

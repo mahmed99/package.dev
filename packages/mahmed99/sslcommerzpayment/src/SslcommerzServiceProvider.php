@@ -28,9 +28,9 @@ class SslcommerzServiceProvider extends ServiceProvider
             __DIR__.'/resources/views' => resource_path('views/vendor/sslcommerzpayment'),
         ]);
 
-        // $this->publishes([
-        //     __DIR__.'/resources/assets' => public_path('vendor/sslcommerzpayment'),
-        // ], 'public')        
+        $this->publishes([
+            __DIR__.'/resources/assets' => public_path('vendor/sslcommerzpayment'),
+        ], 'public');        
 
     }
     
