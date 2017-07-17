@@ -13,4 +13,9 @@
             "Mahmed99\\Sslcommerzpayment\\": "src/"           
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Mahmed99\\Sslcommerzpayment\\Test\\": "tests/"
+        }
+    }
 }

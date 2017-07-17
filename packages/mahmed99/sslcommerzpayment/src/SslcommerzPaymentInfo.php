@@ -18,4 +18,9 @@ class SslcommerzPaymentInfo
     {
         return 'You used the TestFacade to call this method!';
     }
+
+    public function multiply($a, $b)
+    {
+        return $a * $b;
+    }
 }
