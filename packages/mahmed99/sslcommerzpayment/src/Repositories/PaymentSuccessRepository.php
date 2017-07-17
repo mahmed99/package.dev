@@ -85,6 +85,7 @@ class PaymentSuccessRepository implements PaymentRepositoryInterface
                         $store_amount = $result->store_amount;
                         $bank_tran_id = $result->bank_tran_id;
                         $card_type = $result->card_type;
+                        $currency = $result->currency;
 
                         # ISSUER INFO
                         $card_no = $result->card_no;
@@ -131,7 +132,7 @@ class PaymentSuccessRepository implements PaymentRepositoryInterface
                         'payment_data' => $payment_data,
                         'validation_data' => $validation_data,
                         'validation_date' => date('Y-m-d H:i:s'),
-                        'payment_status' => $payment_status
+                        'payment_status' => $payment_status,                        
                         ]
                     );
 
@@ -149,14 +150,18 @@ class PaymentSuccessRepository implements PaymentRepositoryInterface
             }
 
         return [
-        	'payment_status' => $payment_status, 
-        	'validation_message' => $validation_message, 
-        	'status' => $status, 
-        	'tran_id' => $tran_id, 
-        	'val_id' => $val_id, 
-        	'store_amount' => $store_amount, 
-        	'amount' => $amount,
+            'amount' => $amount,
+            'bank_tran_id' => $bank_tran_id,
+            'card_type' => $card_type,
+            'currency' => $currency,
             'orderId' => $orderId,
+            'payment_status' => $payment_status, 
+            'status' => $status, 
+            'store_amount' => $store_amount, 
+            'tran_date' => $tran_date, 
+            'tran_id' => $tran_id, 
+            'val_id' => $val_id, 
+            'validation_message' => $validation_message, 
         ];
         
     }

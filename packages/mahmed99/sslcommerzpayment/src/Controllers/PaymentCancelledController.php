@@ -22,6 +22,6 @@ class PaymentCancelledController extends Controller
 
     	extract($paymentInfo); // $payment_status, $validation_message, $orderId
 
-    	return view('sslcommerzpayment::failed', compact('validation_message', 'orderId', 'payment_status'));
+    	return view('sslcommerzpayment::cancelled', compact('validation_message', 'orderId', 'payment_status'));
     }
 }

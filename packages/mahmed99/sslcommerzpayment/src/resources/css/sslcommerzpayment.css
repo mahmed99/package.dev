@@ -1,0 +1,19 @@
+#payment {
+	font-size: 16px; 
+}
+#payment h1 {
+	margin-left: 35px;
+}
+
+#payment ul {
+	list-style: none;
+}
+
+#payment ul > li {
+    line-height: 2.5;
+}
+
+#payment ul > li > span {
+    font-weight: 700;
+    margin-left: 10px;
+}
