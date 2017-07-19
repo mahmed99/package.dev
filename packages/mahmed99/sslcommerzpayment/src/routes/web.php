@@ -1,6 +1,5 @@
 <?php 
 
-//Route::get('/test', 'Naoray\Test\Http\Controllers\TestController@index');
 Route::group(['middleware' => ['web']], function () {
 	Route::get('/test', 'Mahmed99\Sslcommerzpayment\Controllers\TestController@index');
 
