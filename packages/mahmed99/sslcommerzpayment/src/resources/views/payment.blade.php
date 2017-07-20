@@ -43,10 +43,10 @@
 					<input type="hidden" name="store_id" value="{{ $storeId }}" />
 					{{-- <input type="hidden" name="tran_id" value="594e9719c2e59" /> --}}
 					<input type="hidden" name="tran_id" value="{{ $orderId }}" />					
-					<input type="hidden" name="success_url" value="{{ route('success') }}" />
-					<input type="hidden" name="fail_url" value="{{ route('fail') }}" />
-					<input type="hidden" name="cancel_url" value="{{ route('cancel') }}" />
-					<input type="hidden" name="version" value="3.00" />	
+					<input type="hidden" name="success_url" value="{{ route('sslcommerz.success') }}" />
+					<input type="hidden" name="fail_url" value="{{ route('sslcommerz.fail') }}" />
+					<input type="hidden" name="cancel_url" value="{{ route('sslcommerz.cancel') }}" />
+					<input type="hidden" name="version" value="3.00" />
 
 					<!-- Customer Information !-->
 					<input type="hidden" name="cus_name" value="{{ $user->name }}">
