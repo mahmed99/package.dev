@@ -1,0 +1,31 @@
+body {
+	background-color: #999;
+	font-family: 'Open Sans'; 
+}
+
+#invoice .container {
+	background-color: #fff;
+	padding: 65px;
+	margin-top: 50px; 
+}
+
+#invoice .row {
+	margin-bottom: 15px; 
+}
+
+#invoice header {
+	background-color: black;
+	text-align: center;
+	color: #fff;	 
+}
+
+#invoice address p {
+	margin: 0 0 0.25em;
+}
+
+#invoice h1 {
+	letter-spacing: 0.3em;
+	/*text-align: center;*/
+	text-transform: uppercase;
+
+}
