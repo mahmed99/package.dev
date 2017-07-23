@@ -5,10 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Laravel</title>      
 
-        <!-- Fonts -->
-        <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -68,7 +67,21 @@
 
             article address { float: left; font-size: 125%; font-weight: bold; }
 
-            /* table meta & balance */
+            table.owner { 
+                float: left; 
+                font-size: 60%; 
+                font-style: normal; 
+                /*line-height: 1.25;*/ 
+                margin: 0 1em 1em 0; 
+                width:40%; 
+            }
+            table.owner td { border-style: none; padding: 0.175em; }
+
+            /* table recipient */
+            table.recipient { float: left; width: 35%; }
+            /*table.meta:after, table.balance:after { clear: both; content: ""; display: table; }*/
+
+            /* table meta & balance */            
 
             table.meta, table.balance { float: right; width: 36%; }
             table.meta:after, table.balance:after { clear: both; content: ""; display: table; }
@@ -100,7 +113,7 @@
             aside h1 { border-color: #999; border-bottom-style: solid; }
             
 
-            #invoice footer {
+            footer {
                 color: #5D6975;
                 width: 88.3%;
                 height: 30px;
@@ -109,7 +122,8 @@
                 padding: 8px 0;
                 text-align: center;
                 font-size: 12px;
-                font-family: Arial;
+               /* font-family: Arial;*/
+                font-weight: 300;
                 bottom: 0px;
                 /*left: 0px;
                 right: 0px;*/
@@ -126,7 +140,7 @@
                     height: 11in; 
                     width: 8.5in;
                 }
-                #invoice footer { width: 90%; }
+                #invoice footer { width: 100%; }
             }
 
             @page { margin: 0; }
@@ -158,7 +172,7 @@
             @media only screen and (min-width : 768px) {
                 html { padding: 0.5in; }
                 body {
-                    height: auto;
+                    height: 11in;
                     padding: 0.4in; 
                     font-size: 0.938em;     
                 }
@@ -183,77 +197,77 @@
             }
         </style>
     </head>
-    <body>
-       <!--  <div class="flex-center">  -->                      
-            <div id="invoice"> 
-                <header>
-                    <h1>Invoice</h1>
-                    <address>
-                        <p>Mahfuz Ahmed</p>
-                        <p>101 E. Chapman Ave<br>Orange, CA 92866</p>
-                        <p>(800) 555-1234</p>
-                    </address>
-
-                    <img alt="" src="{{ asset('storage/images/logo.png') }}">                                          
-                </header>                                            
-                
-                <article>                
-                    <address>
-                        <p>Some Company<br>c/o Some Guy</p>
-                    </address>
-                    <table class="meta">
+    <body>                        
+        <div id="invoice"> 
+            <header>
+                <h1>Invoice</h1>                
+                <table class="owner">                   
+                    <tr><td> <strong>A2Z Ltd</strong> </td></tr>
+                    <tr><td> 101 E. Chapman Ave<br>Orange, CA 92866 </td></tr>
+                    <tr><td>(800) 555-1234</td></tr>
+                    <tr><td>a2ze@a2z.com</td></tr>
+                </table>
+                <img alt="" src="{{ asset('images/logo.png') }}">                                          
+            </header>                                            
+            
+            <article> 
+                <table class="recipient">
+                    <tr><th>Recipient </th> </tr>
+                    <tr><td> Jhon Dode</td> </tr>
+                    <tr><td>Jhon_doe@mail.com</td></tr>
+                </table>
+                <table class="meta">
+                    <tr>
+                        <th><span>Invoice #</span></th>
+                        <td><span>101138</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Date</span></th>
+                        <td><span>January 1, 2012</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Amount Due</span></th>
+                        <td><span id="prefix">$</span><span>600.00</span></td>
+                    </tr>
+                </table>                                          
+                <table class="inventory">
+                    <thead>
                         <tr>
-                            <th><span>Invoice #</span></th>
-                            <td><span>101138</span></td>
+                            <th><span>Item</span></th>
+                            <th><span>Description</span></th>
+                            <th><span>Rate</span></th>
+                            <th><span>Quantity</span></th>
+                            <th><span>Price</span></th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
-                            <th><span>Date</span></th>
-                            <td><span>January 1, 2012</span></td>
-                        </tr>
-                        <tr>
-                            <th><span>Amount Due</span></th>
-                            <td><span id="prefix">$</span><span>600.00</span></td>
-                        </tr>
-                    </table>                                          
-                    <table class="inventory">
-                        <thead>
-                            <tr>
-                                <th><span>Item</span></th>
-                                <th><span>Description</span></th>
-                                <th><span>Rate</span></th>
-                                <th><span>Quantity</span></th>
-                                <th><span>Price</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span>Front End Consultation</span></td>
-                                <td><span>Experience Review</span></td>
-                                <td><span data-prefix>$</span><span>150.00</span></td>
-                                <td><span>4</span></td>
-                                <td><span data-prefix>$</span><span>600.00</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="balance">
-                        <tr>
-                            <th><span>Total</span></th>
+                            <td><span>Front End Consultation</span></td>
+                            <td><span>Experience Review</span></td>
+                            <td><span data-prefix>$</span><span>150.00</span></td>
+                            <td><span>4</span></td>
                             <td><span data-prefix>$</span><span>600.00</span></td>
                         </tr>
-                        <tr>
-                            <th><span>Amount Paid</span></th>
-                            <td><span data-prefix>$</span><span>0.00</span></td>
-                        </tr>
-                        <tr>
-                            <th><span>Balance Due</span></th>
-                            <td><span data-prefix>$</span><span>600.00</span></td>
-                        </tr>
-                    </table>                                
+                    </tbody>
+                </table>
+                <table class="balance">
+                    <tr>
+                        <th><span>Total</span></th>
+                        <td><span data-prefix>$</span><span>600.00</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Amount Paid</span></th>
+                        <td><span data-prefix>$</span><span>0.00</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Balance Due</span></th>
+                        <td><span data-prefix>$</span><span>600.00</span></td>
+                    </tr>
+                </table>                                
             </article>
             <footer>                
                 Invoice was created on a computer and is valid without the signature and seal.
-            </footer> 
-            </div>
-        <!-- </div> -->
+            </footer>             
+        </div>        
     </body>
 </html>

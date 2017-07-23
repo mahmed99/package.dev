@@ -77,7 +77,7 @@
     'italic' => $rootDir . '\lib\fonts\DejaVuSerif-Italic',
     'normal' => $rootDir . '\lib\fonts\DejaVuSerif',
   ),
-  'raleway' => array(
-    'normal' => $fontDir . '\e41f270af826027390dde6fc02e945f9',
+  'open sans' => array(
+    'normal' => $fontDir . '\a7a59adf213b48efca0810d876eeb805',
   ),
 ) ?>
