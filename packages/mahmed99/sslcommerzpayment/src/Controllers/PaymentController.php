@@ -5,7 +5,7 @@ namespace Mahmed99\Sslcommerzpayment\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Order;
+use App\Order; //app()->getNamespace();
 use App\User;
 use Mahmed99\Sslcommerzpayment\Repositories\PaymentRepository;
 
