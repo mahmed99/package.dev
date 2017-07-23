@@ -139,8 +139,8 @@
                     margin: 0; 
                     height: 11in; 
                     width: 8.5in;
-                }
-                #invoice footer { width: 100%; }
+                }                
+                footer { width: 90%; }
             }
 
             @page { margin: 0; }
