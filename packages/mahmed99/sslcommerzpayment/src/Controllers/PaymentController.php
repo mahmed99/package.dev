@@ -18,9 +18,12 @@ class PaymentController extends Controller
        $this->payment = $payment;	   
     }
     
-    public function payNow(Order $order, Request $request)
+    public function payNow($order, Request $request)
     {
-    	       
+         $a= app()->getNamespace()."Order";
+         $Order = new $a;
+    	 //$Order = new \App\Order;
+          $order = $Order->find($order);  
         //dd($order);
         $orderId = $order->id;                
         $amount = $order->amount;        
