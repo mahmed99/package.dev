@@ -5,7 +5,8 @@ namespace Mahmed99\Sslcommerzpayment\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Order; //app()->getNamespace();
+//use App\Order; //app()->getNamespace();
+
 use App\User;
 use Mahmed99\Sslcommerzpayment\Repositories\PaymentRepository;
 
@@ -20,11 +21,10 @@ class PaymentController extends Controller
     
     public function payNow($order, Request $request)
     {
-         $a= app()->getNamespace()."Order";
-         $Order = new $a;
-    	 //$Order = new \App\Order;
-          $order = $Order->find($order);  
-        //dd($order);
+         //dd($order);
+        $orderClass = app()->getNamespace().'Order';  //App/Order
+        $orderObj = new $orderClass;
+        $order = $orderObj->find($order); 
         $orderId = $order->id;                
         $amount = $order->amount;        
         
@@ -32,9 +32,11 @@ class PaymentController extends Controller
         $totalAmount = $amount + $onlineCharge;
         
 
-        //$user = $request->user();          
-        //$name = $user->name;
-        //$email = $user->email;
+        //$user = $request->user();
+        /* no need
+        $name = $user->name;
+        $email = $user->email;
+        */
         $user = User::find(1); 
         //dd($user);
 
@@ -66,5 +68,4 @@ class PaymentController extends Controller
         return view ('sslcommerzpayment::error', compact('errorMsg'));        
         
     }
-
 }
