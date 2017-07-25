@@ -94,7 +94,7 @@
             /* table items */
 
             table.inventory { clear: both; width: 100%; }
-            table.inventory th { font-weight: bold; text-align: center; }
+            table.inventory th { font-weight: bold; text-align: left; }
 
             table.inventory td:nth-child(1) { width: 26%; }
             table.inventory td:nth-child(2) { width: 38%; }
@@ -228,6 +228,10 @@
                     <tr>
                         <th><span>Amount Due</span></th>
                         <td><span id="prefix">$</span><span>600.00</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Payment Type</span></th>
+                        <td><span>COD</span></td>
                     </tr>
                 </table>                                          
                 <table class="inventory">
