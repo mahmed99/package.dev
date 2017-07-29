@@ -77,7 +77,7 @@
     'italic' => $rootDir . '\lib\fonts\DejaVuSerif-Italic',
     'normal' => $rootDir . '\lib\fonts\DejaVuSerif',
   ),
-  'open sans' => array(
-    'normal' => $fontDir . '\a7a59adf213b48efca0810d876eeb805',
+  'bangla' => array(
+    'normal' => $fontDir . '\6140ed494fbc09f3f80e5a1a68f1e02e',
   ),
 ) ?>

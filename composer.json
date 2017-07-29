@@ -7,8 +7,10 @@
     "require": {
         "php": ">=5.6.4",
         "barryvdh/laravel-dompdf": "^0.8.0",
+        "carlos-meneses/laravel-mpdf": "^1.1",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "niklasravnsborg/laravel-pdf": "^1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

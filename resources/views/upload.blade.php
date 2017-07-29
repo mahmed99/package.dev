@@ -11,7 +11,7 @@
                     <form enctype="multipart/form-data" method="POST" action=" {{route('upload')}}">
                         {{ csrf_field() }}
                         <input type="file" name="avatar">
-                        <button type="submit"> upload</button>                    
+                        <button type="submit">upload</button>                    
                     </form>
 
                 </div>

@@ -70,19 +70,53 @@ Route::post('/upload', function(Request $request) {
 	$fileOriginlName = $file->getClientOriginalName();	
 	$path = $file->storeAs('public/images', $fileOriginlName);
 
-    return sprintf('Uploaded here: %s', $path);	
+    return view('testing');
 
 })->name('upload');
+
+Route::get('/show-upload', function() {	
+	return view('testing');
+});
+
 
 Route::get('make/pdf', function() {	
 	$pdf = PDF::loadView('invoice.pdf'); //  pdf.blade.php
 	return $pdf->download('invoice.pdf');  // generate invoice.pdf
 	//return $pdf->stream('invoice.pdf');
-	
-	
 });
 
 Route::get('/view/pdf', function() {    
 	return view('invoice.pdf');
 });
+
+Route::get('/view/bng', function() {    
+	$data = [
+		'foo' => 'লারাভেল',
+	];
+	return view('invoice.bngpdf', ['data' => $data]);
+});
+
+Route::get('make/bngpdf', function() {	
+	$data = [
+		'foo' => 'লারাভেল',
+	];	
+	$pdf = PDF::loadView('invoice.bngpdf', ['data' => $data]);	
+	return $pdf->stream('laravel.pdf');  // generate invoice.pdf
+	// //return $pdf->stream('invoice.pdf');
+	
+});
+
+
+// Route::get('test', function() {
+// 	Storage::disk('local')->put('public/hello.txt', 'hello world'); //app/storage/public/hello.txt 
+// 	echo 'file created';
+	
+// 	$exists = Storage::disk('public')->exists('hello.txt');
+// 	//dd($exists);
+// 	//return $exists;
+// 	echo asset('storage/hello.txt');
+// 	$contents = Storage::disk('public')->get('hello.txt'); //public/storage/hello.txt
+	
+// 	return $contents;
+// });
 

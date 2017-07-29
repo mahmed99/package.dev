@@ -168,7 +168,10 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Mahmed99\Sslcommerzpayment\SslcommerzServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,        
+       // Barryvdh\DomPDF\ServiceProvider::class,
+     
+        
+        
 
         /*
          * Application Service Providers...
@@ -228,7 +231,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Sslcommerz' => Mahmed99\Sslcommerzpayment\Facades\SslcommerzpaymentFacade::class,
-        'PDF' => Barryvdh\DomPDF\Facade::class,        
+        //'PDF' => Barryvdh\DomPDF\Facade::class,        
+        //'PDF' => ZanySoft\LaravelPDF\Facades\PDF::class,       
+        
     ],
 
 ];
